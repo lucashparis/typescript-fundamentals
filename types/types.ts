@@ -67,6 +67,22 @@ let collaborator: {
         return 'Bad time';
     }
 }
+// console.log(collaborator.supervisors);
+// console.log(collaborator.registration(8));
+
+
+// Alias 
+let collaborator2: Collaborator = {
+    supervisors: ['Yuri', 'Jhuonas'],
+    registration(horary: number): string {
+        if (horary <= 8) return 'Horary OK';
+        return 'Bad time';
+    }
+}
 console.log(collaborator.supervisors);
 console.log(collaborator.registration(8));
 
+type Collaborator = {
+    supervisors: string[],
+    registration: (horary: number) => string
+}
