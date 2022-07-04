@@ -91,3 +91,23 @@ type Collaborator = {
 // Union Types 
 let note: number | string = 10;
 console.log(`Note ${note}!`);
+
+
+// Never 
+function failed(msg:string): never {
+    throw new Error(msg);
+}
+
+const product = {
+    name: null,
+    price: -1,
+    ValidateProd(){
+        if (!this.name || this.name.trim().length == 0) {
+            failed('I need to have a name')
+        }
+        if (this.price <= 0) {
+            failed('Price invalid')
+        }
+    }
+}
+product.ValidateProd()
