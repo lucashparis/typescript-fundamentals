@@ -86,3 +86,8 @@ type Collaborator = {
     supervisors: string[],
     registration: (horary: number) => string
 }
+
+
+// Union Types 
+let note: number | string = 10;
+console.log(`Note ${note}!`);
